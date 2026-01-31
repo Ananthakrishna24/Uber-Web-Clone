@@ -55,8 +55,8 @@ The student is building an **Uber clone (web-based)** using:
 | 9      | NOT STARTED | —            | —              |
 | 10     | NOT STARTED | —            | —              |
 
-**Last session ended at:** Module 0, Task 0.2 completed
-**Next session should start at:** Module 0, Task 0.3
+**Last session ended at:** Module 0, Task 0.3 completed
+**Next session should start at:** Module 0, Task 0.4
 **Any blockers/notes:** None
 
 ---
@@ -75,7 +75,9 @@ The student is building an **Uber clone (web-based)** using:
 - Added CODE STANDARDS section to session notes (modern JS, Context7 usage)
 - Added "When Starting a Task" instructions for Claude (auto-create notes files)
 - Configured Context7 MCP server for fetching latest library docs
-- Next: Task 0.3 — Basic Express Microservice Pattern
+- Completed Task 0.3: Added GET /health endpoints to all 5 services with live uptime
+- Learned: monolith vs microservices, health check pattern, definition-time vs call-time evaluation
+- Next: Task 0.4 — Connect to PostgreSQL from User Service
 
 ---
 

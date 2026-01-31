@@ -80,10 +80,10 @@
 - [x] Initialize each service with `package.json` and basic Express server
 - **Learn:** Monorepo structure, why each service is independent
 
-### Task 0.3 — Basic Express Microservice Pattern
-- [ ] Create a reusable Express server template
-- [ ] Add health check endpoint (`GET /health`) to each service
-- [ ] Test that all services run independently on different ports
+### Task 0.3 — Basic Express Microservice Pattern ✅
+- [x] Create a reusable Express server template
+- [x] Add health check endpoint (`GET /health`) to each service
+- [x] Test that all services run independently on different ports
 - **Learn:** What a microservice IS, how it differs from monolith
 - **Concept:** Service independence, port allocation
 
