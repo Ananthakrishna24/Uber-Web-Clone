@@ -55,8 +55,8 @@ The student is building an **Uber clone (web-based)** using:
 | 9      | NOT STARTED | —            | —              |
 | 10     | NOT STARTED | —            | —              |
 
-**Last session ended at:** Module 1, Task 1.1 completed
-**Next session should start at:** Module 1, Task 1.2
+**Last session ended at:** Module 1, Task 1.2 completed
+**Next session should start at:** Module 1, Task 1.3
 **Any blockers/notes:** No ORMs — using raw SQL + pg for transparency
 
 ---
@@ -84,6 +84,7 @@ The student is building an **Uber clone (web-based)** using:
 - Module 0 complete! Next: Module 1 — User Service & Authentication
 - Completed Task 1.1: Created `users` table with UUID primary key, unique email index, role CHECK constraint
 - Decision: No ORM — raw SQL + `pg` for learning transparency
+- Completed Task 1.2: Registration endpoint with bcrypt hashing, input validation, duplicate email handling
 
 ---
 

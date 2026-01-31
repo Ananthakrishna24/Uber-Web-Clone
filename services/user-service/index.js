@@ -1,10 +1,14 @@
 import express from 'express';
 import { query } from './src/db.js';
+import authRoutes from './src/routes/auth.js';
 
 const app = express();
 const PORT = 3001;
 
 app.use(express.json());
+
+// Routes
+app.use('/api/users', authRoutes);
 
 app.get('/', (req, res) => {
   res.json({ service: 'user-service', status: 'running' });

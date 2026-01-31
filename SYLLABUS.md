@@ -110,11 +110,11 @@
 - [x] Understand primary keys, indexes, and why email should be unique
 - **Exercise:** Draw the table schema on paper first, then implement
 
-### Task 1.2 — User Registration Endpoint
-- [ ] `POST /api/users/register` — accepts email, password, name, role (rider/driver)
-- [ ] Validate input (no empty fields, valid email format)
-- [ ] Hash password with bcrypt before storing
-- [ ] Return user object (without password)
+### Task 1.2 — User Registration Endpoint ✅
+- [x] `POST /api/users/register` — accepts email, password, name, role (rider/driver)
+- [x] Validate input (no empty fields, valid email format)
+- [x] Hash password with bcrypt before storing
+- [x] Return user object (without password)
 - **Exercise:** Try writing this yourself first, then we review together
 
 ### Task 1.3 — User Login & JWT
