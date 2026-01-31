@@ -104,10 +104,10 @@
 - Password hashing with bcrypt
 - REST API design basics
 
-### Task 1.1 — Database Schema Design
-- [ ] Design `users` table (id, email, password_hash, name, role, created_at)
-- [ ] Write and run the SQL migration manually (learn before using ORMs)
-- [ ] Understand primary keys, indexes, and why email should be unique
+### Task 1.1 — Database Schema Design ✅
+- [x] Design `users` table (id, email, password_hash, name, role, created_at)
+- [x] Write and run the SQL migration manually (learn before using ORMs)
+- [x] Understand primary keys, indexes, and why email should be unique
 - **Exercise:** Draw the table schema on paper first, then implement
 
 ### Task 1.2 — User Registration Endpoint

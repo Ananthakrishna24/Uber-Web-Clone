@@ -44,7 +44,7 @@ The student is building an **Uber clone (web-based)** using:
 | Module | Status      | Date Started | Date Completed |
 |--------|-------------|--------------|----------------|
 | 0      | COMPLETED   | 2026-01-31   | 2026-01-31     |
-| 1      | NOT STARTED | —            | —              |
+| 1      | IN PROGRESS | 2026-01-31   | —              |
 | 2      | NOT STARTED | —            | —              |
 | 3      | NOT STARTED | —            | —              |
 | 4      | NOT STARTED | —            | —              |
@@ -55,9 +55,9 @@ The student is building an **Uber clone (web-based)** using:
 | 9      | NOT STARTED | —            | —              |
 | 10     | NOT STARTED | —            | —              |
 
-**Last session ended at:** Module 0, Task 0.4 completed
-**Next session should start at:** Module 1, Task 1.1
-**Any blockers/notes:** Module 0 is now complete
+**Last session ended at:** Module 1, Task 1.1 completed
+**Next session should start at:** Module 1, Task 1.2
+**Any blockers/notes:** No ORMs — using raw SQL + pg for transparency
 
 ---
 
@@ -82,6 +82,8 @@ The student is building an **Uber clone (web-based)** using:
 - Created `src/db.js` with Pool, env var config, and exported query helper
 - Updated `/health` to include live database status
 - Module 0 complete! Next: Module 1 — User Service & Authentication
+- Completed Task 1.1: Created `users` table with UUID primary key, unique email index, role CHECK constraint
+- Decision: No ORM — raw SQL + `pg` for learning transparency
 
 ---
 

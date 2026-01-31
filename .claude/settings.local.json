@@ -14,7 +14,8 @@
       "Bash(powershell.exe -Command \"Get-Command docker -ErrorAction SilentlyContinue; & ''C:\\\\Program Files\\\\Docker\\\\Docker\\\\resources\\\\bin\\\\docker.exe'' --version 2>$null; & ''$env:LOCALAPPDATA\\\\Docker\\\\resources\\\\bin\\\\docker.exe'' --version 2>$null\")",
       "Bash(powershell.exe -Command \"& ''C:\\\\Program Files\\\\Docker\\\\Docker\\\\resources\\\\bin\\\\docker.exe'' --version\")",
       "Bash(powershell.exe -Command \"cd ''C:\\\\Users\\\\anant\\\\Downloads\\\\Uber-Web-Clone''; & ''C:\\\\Program Files\\\\Docker\\\\Docker\\\\resources\\\\bin\\\\docker.exe'' compose up -d postgres\")",
-      "Bash(powershell.exe -Command \"cd ''C:\\\\Users\\\\anant\\\\Downloads\\\\Uber-Web-Clone\\\\services\\\\user-service''; $proc = Start-Process -FilePath ''node'' -ArgumentList ''index.js'' -PassThru -NoNewWindow -RedirectStandardOutput ''stdout.txt'' -RedirectStandardError ''stderr.txt''; Start-Sleep -Seconds 3; Stop-Process -Id $proc.Id -Force -ErrorAction SilentlyContinue; Get-Content stdout.txt; Get-Content stderr.txt\")"
+      "Bash(powershell.exe -Command \"cd ''C:\\\\Users\\\\anant\\\\Downloads\\\\Uber-Web-Clone\\\\services\\\\user-service''; $proc = Start-Process -FilePath ''node'' -ArgumentList ''index.js'' -PassThru -NoNewWindow -RedirectStandardOutput ''stdout.txt'' -RedirectStandardError ''stderr.txt''; Start-Sleep -Seconds 3; Stop-Process -Id $proc.Id -Force -ErrorAction SilentlyContinue; Get-Content stdout.txt; Get-Content stderr.txt\")",
+      "Bash(powershell.exe -Command \"echo ''\\\\d users'' | & ''C:\\\\Program Files\\\\Docker\\\\Docker\\\\resources\\\\bin\\\\docker.exe'' exec -i postgres_db psql -U user -d microservices_db\")"
     ]
   }
 }
