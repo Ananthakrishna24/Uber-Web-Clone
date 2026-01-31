@@ -46,8 +46,8 @@ The student is building an **Uber clone (web-based)** using:
 | 9      | NOT STARTED | —            | —              |
 | 10     | NOT STARTED | —            | —              |
 
-**Last session ended at:** Module 0, Task 0.2 (folder structure done, Express init remaining)
-**Next session should start at:** Module 0, Task 0.2 (finish Express init) → then Task 0.3
+**Last session ended at:** Module 0, Task 0.2 completed
+**Next session should start at:** Module 0, Task 0.3
 **Any blockers/notes:** None
 
 ---
@@ -70,6 +70,13 @@ The student is building an **Uber clone (web-based)** using:
 1. Read this file FIRST in every new session
 2. Check CURRENT PROGRESS table to know where we are
 3. Read SYLLABUS.md for the full plan and current module details
+
+### When Starting a Task:
+1. Create a **notes file** at `notes/module-XX-<name>/task-X.Y-<slug>.md`
+   - Follow the pattern of existing notes (see `task-0.1-docker-compose.md` as reference)
+   - Must include: concept explanation (why), ASCII diagrams where helpful, key terms, exercise/assignment, verification steps
+   - This is the student's learning reference — make it thorough and beginner-friendly
+2. Present the concepts and exercise to the student BEFORE writing code
 
 ### When a Task is Completed:
 1. **SYLLABUS.md** — Mark the task heading with ✅ and change all `- [ ]` to `- [x]` for that task

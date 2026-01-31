@@ -61,7 +61,7 @@
 - **Learn:** What Docker Compose does, why microservices need it
 - **Concept:** Container orchestration basics
 
-### Task 0.2 — Project Structure (partial ✅)
+### Task 0.2 — Project Structure ✅
 - [x] Create the monorepo folder structure:
   ```
   uber-web-clone/
@@ -77,7 +77,7 @@
   ├── SESSION_NOTES.md
   └── SYLLABUS.md
   ```
-- [ ] Initialize each service with `package.json` and basic Express server
+- [x] Initialize each service with `package.json` and basic Express server
 - **Learn:** Monorepo structure, why each service is independent
 
 ### Task 0.3 — Basic Express Microservice Pattern
