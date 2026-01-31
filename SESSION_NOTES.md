@@ -13,7 +13,7 @@ This is a **learning project** — NOT a production build. The goal is to teach:
 3. **System Design** — Microservices, API gateway, load balancing, async communication
 
 The student is building an **Uber clone (web-based)** using:
-- **Backend:** Node.js microservices (Express)
+- **Backend:** Node.js microservices (Express 5)
 - **Frontend:** React
 - **Database:** PostgreSQL
 - **Message Broker:** Apache Kafka
@@ -27,6 +27,15 @@ The student is building an **Uber clone (web-based)** using:
 - **Teaching style needed:** Explain concepts BEFORE code, use diagrams (ASCII),
   ask them to try first, then review. Don't just hand them code.
 - **Docker:** Installed and ready
+
+## CODE STANDARDS
+
+- **Modern JS only:** Use ES module syntax (`import`/`export`) — NOT `require()`/`module.exports`
+- **Express 5:** All services use Express 5 (`"type": "module"` in `package.json`)
+- **Use `const`/`let`** — never `var`
+- **Arrow functions** where appropriate
+- **Template literals** for string interpolation
+- **Context7:** Before writing code for any library/package, use the Context7 MCP tool (`resolve-library-id` → `query-docs`) to fetch the latest documentation. Do NOT rely on outdated patterns.
 
 ---
 
@@ -59,7 +68,13 @@ The student is building an **Uber clone (web-based)** using:
 
 ### Session 2 — 2026-01-31
 - Completed Task 0.1: Docker Compose setup (PostgreSQL, Kafka, Zookeeper, Redis)
-- Completed Task 0.2: Created monorepo folder structure (services/, frontend/, shared/)
+- Completed Task 0.2: Created monorepo folder structure + initialized all 5 services with Express 5 & ES modules
+- Upgraded all services to modern JS (ES modules, Express 5.2.1, `import`/`export`)
+- Added `.gitignore`
+- Created `notes/module-00-environment/task-0.2-project-structure.md`
+- Added CODE STANDARDS section to session notes (modern JS, Context7 usage)
+- Added "When Starting a Task" instructions for Claude (auto-create notes files)
+- Configured Context7 MCP server for fetching latest library docs
 - Next: Task 0.3 — Basic Express Microservice Pattern
 
 ---

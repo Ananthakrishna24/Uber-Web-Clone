@@ -3,7 +3,11 @@
     "allow": [
       "Bash(npm init:*)",
       "Bash(npm install:*)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(claude mcp add context7 -- npx -y @upstash/context7-mcp --api-key ctx7sk-e0e8a122-5b8b-41b1-b81f-45aa622f66fa)",
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__query-docs",
+      "Bash(npm pkg:*)"
     ]
   }
 }

@@ -72,13 +72,15 @@ This means:
 
 ## What Is Express?
 
-Express is a minimal web framework for Node.js. It lets you:
+Express is a minimal web framework for Node.js. We use **Express 5** with **ES module syntax**.
+It lets you:
 1. Listen on a port for HTTP requests
 2. Define routes (URL paths) and what happens when they're hit
 3. Use middleware (functions that run before your route handler)
 
 ```javascript
-const express = require('express');
+import express from 'express';    // ES module import (NOT require!)
+
 const app = express();
 
 app.use(express.json());    // Middleware: parse JSON request bodies
@@ -91,6 +93,12 @@ app.listen(3001, () => {              // Start listening on port 3001
   console.log('Running on port 3001');
 });
 ```
+
+### Why ES Modules?
+- `import`/`export` is the modern JavaScript standard (ESM)
+- `require()`/`module.exports` is the old CommonJS style
+- We set `"type": "module"` in `package.json` to enable ESM
+- This is how modern Node.js projects are written
 
 ## Why Different Ports?
 
