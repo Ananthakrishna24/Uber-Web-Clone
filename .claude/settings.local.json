@@ -7,7 +7,14 @@
       "Bash(claude mcp add context7 -- npx -y @upstash/context7-mcp --api-key ctx7sk-e0e8a122-5b8b-41b1-b81f-45aa622f66fa)",
       "mcp__context7__resolve-library-id",
       "mcp__context7__query-docs",
-      "Bash(npm pkg:*)"
+      "Bash(npm pkg:*)",
+      "Bash(docker compose up:*)",
+      "Bash(docker.exe compose:*)",
+      "Bash(powershell.exe -Command \"cd ''C:\\\\Users\\\\anant\\\\Downloads\\\\Uber-Web-Clone''; docker compose up -d postgres\")",
+      "Bash(powershell.exe -Command \"Get-Command docker -ErrorAction SilentlyContinue; & ''C:\\\\Program Files\\\\Docker\\\\Docker\\\\resources\\\\bin\\\\docker.exe'' --version 2>$null; & ''$env:LOCALAPPDATA\\\\Docker\\\\resources\\\\bin\\\\docker.exe'' --version 2>$null\")",
+      "Bash(powershell.exe -Command \"& ''C:\\\\Program Files\\\\Docker\\\\Docker\\\\resources\\\\bin\\\\docker.exe'' --version\")",
+      "Bash(powershell.exe -Command \"cd ''C:\\\\Users\\\\anant\\\\Downloads\\\\Uber-Web-Clone''; & ''C:\\\\Program Files\\\\Docker\\\\Docker\\\\resources\\\\bin\\\\docker.exe'' compose up -d postgres\")",
+      "Bash(powershell.exe -Command \"cd ''C:\\\\Users\\\\anant\\\\Downloads\\\\Uber-Web-Clone\\\\services\\\\user-service''; $proc = Start-Process -FilePath ''node'' -ArgumentList ''index.js'' -PassThru -NoNewWindow -RedirectStandardOutput ''stdout.txt'' -RedirectStandardError ''stderr.txt''; Start-Sleep -Seconds 3; Stop-Process -Id $proc.Id -Force -ErrorAction SilentlyContinue; Get-Content stdout.txt; Get-Content stderr.txt\")"
     ]
   }
 }

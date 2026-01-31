@@ -87,10 +87,10 @@
 - **Learn:** What a microservice IS, how it differs from monolith
 - **Concept:** Service independence, port allocation
 
-### Task 0.4 — Connect to PostgreSQL from User Service
-- [ ] Install `pg` (node-postgres) in user-service
-- [ ] Create a database connection utility
-- [ ] Test the connection with a simple query
+### Task 0.4 — Connect to PostgreSQL from User Service ✅
+- [x] Install `pg` (node-postgres) in user-service
+- [x] Create a database connection utility
+- [x] Test the connection with a simple query
 - **Learn:** Connection pooling, environment variables, why not one DB per service (yet)
 
 ---

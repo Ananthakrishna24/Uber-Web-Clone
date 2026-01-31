@@ -43,7 +43,7 @@ The student is building an **Uber clone (web-based)** using:
 
 | Module | Status      | Date Started | Date Completed |
 |--------|-------------|--------------|----------------|
-| 0      | IN PROGRESS | 2026-01-31   | —              |
+| 0      | COMPLETED   | 2026-01-31   | 2026-01-31     |
 | 1      | NOT STARTED | —            | —              |
 | 2      | NOT STARTED | —            | —              |
 | 3      | NOT STARTED | —            | —              |
@@ -55,9 +55,9 @@ The student is building an **Uber clone (web-based)** using:
 | 9      | NOT STARTED | —            | —              |
 | 10     | NOT STARTED | —            | —              |
 
-**Last session ended at:** Module 0, Task 0.3 completed
-**Next session should start at:** Module 0, Task 0.4
-**Any blockers/notes:** None
+**Last session ended at:** Module 0, Task 0.4 completed
+**Next session should start at:** Module 1, Task 1.1
+**Any blockers/notes:** Module 0 is now complete
 
 ---
 
@@ -78,6 +78,10 @@ The student is building an **Uber clone (web-based)** using:
 - Completed Task 0.3: Added GET /health endpoints to all 5 services with live uptime
 - Learned: monolith vs microservices, health check pattern, definition-time vs call-time evaluation
 - Next: Task 0.4 — Connect to PostgreSQL from User Service
+- Completed Task 0.4: Connected user-service to PostgreSQL using `pg` with connection pooling
+- Created `src/db.js` with Pool, env var config, and exported query helper
+- Updated `/health` to include live database status
+- Module 0 complete! Next: Module 1 — User Service & Authentication
 
 ---
 
