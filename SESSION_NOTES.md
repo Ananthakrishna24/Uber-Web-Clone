@@ -44,7 +44,7 @@ The student is building an **Uber clone (web-based)** using:
 | Module | Status      | Date Started | Date Completed |
 |--------|-------------|--------------|----------------|
 | 0      | COMPLETED   | 2026-01-31   | 2026-01-31     |
-| 1      | IN PROGRESS | 2026-01-31   | —              |
+| 1      | COMPLETED   | 2026-01-31   | 2026-02-01     |
 | 2      | NOT STARTED | —            | —              |
 | 3      | NOT STARTED | —            | —              |
 | 4      | NOT STARTED | —            | —              |
@@ -55,8 +55,8 @@ The student is building an **Uber clone (web-based)** using:
 | 9      | NOT STARTED | —            | —              |
 | 10     | NOT STARTED | —            | —              |
 
-**Last session ended at:** Module 1, Task 1.4 completed
-**Next session should start at:** Module 1, Task 1.5
+**Last session ended at:** Module 1 COMPLETED (Task 1.5)
+**Next session should start at:** Module 2, Task 2.1
 **Any blockers/notes:** No ORMs — using raw SQL + pg for transparency. Using node --watch for dev auto-restart.
 
 ---
@@ -88,6 +88,8 @@ The student is building an **Uber clone (web-based)** using:
 - Added `npm run dev` scripts (node --watch) to all services, updated start-services.ps1 to start Docker first
 - Completed Task 1.3: Login endpoint with bcrypt compare and JWT token generation (24h expiry)
 - Completed Task 1.4: Auth middleware (JWT verification) + protected GET /api/users/profile endpoint
+- Completed Task 1.5: Driver-specific fields (license_number, vehicle_info JSONB, is_available) + PUT /driver-profile with role-based authorization
+- Module 1 complete! Next: Module 2 — API Gateway Pattern
 
 ---
 

@@ -3,6 +3,7 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { query } from '../db.js';
 import authenticate from '../middleware/auth.js';
+import authorize from '../middleware/authorize.js';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'dev-secret-change-in-production';
 const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN || '24h';
@@ -106,7 +107,8 @@ router.post('/login', async (req, res) => {
 router.get('/profile', authenticate, async (req, res) => {
   try {
     const result = await query(
-      'SELECT id, email, name, role, created_at FROM users WHERE id = $1',
+      `SELECT id, email, name, role, license_number, vehicle_info, is_available, created_at
+       FROM users WHERE id = $1`,
       [req.user.id]
     );
 
@@ -117,6 +119,28 @@ router.get('/profile', authenticate, async (req, res) => {
     res.json({ user: result.rows[0] });
   } catch (err) {
     console.error('Profile error:', err.message);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// PUT /api/users/driver-profile (protected, driver-only)
+router.put('/driver-profile', authenticate, authorize('driver'), async (req, res) => {
+  const { license_number, vehicle_info, is_available } = req.body;
+
+  try {
+    const result = await query(
+      `UPDATE users
+       SET license_number = COALESCE($1, license_number),
+           vehicle_info = COALESCE($2, vehicle_info),
+           is_available = COALESCE($3, is_available)
+       WHERE id = $4
+       RETURNING id, email, name, role, license_number, vehicle_info, is_available, created_at`,
+      [license_number, vehicle_info ? JSON.stringify(vehicle_info) : null, is_available, req.user.id]
+    );
+
+    res.json({ user: result.rows[0] });
+  } catch (err) {
+    console.error('Driver profile update error:', err.message);
     res.status(500).json({ error: 'Internal server error' });
   }
 });

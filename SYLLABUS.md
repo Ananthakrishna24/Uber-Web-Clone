@@ -131,10 +131,10 @@
 - [x] Create a protected route `GET /api/users/profile`
 - **Learn:** Middleware pattern, request pipeline
 
-### Task 1.5 — Driver-Specific Fields
-- [ ] Add `vehicle_info` (JSON), `is_available` (boolean), `license_number` to users table
-- [ ] `PUT /api/users/driver-profile` — update driver details
-- [ ] Only allow users with role=driver to access this
+### Task 1.5 — Driver-Specific Fields ✅
+- [x] Add `vehicle_info` (JSON), `is_available` (boolean), `license_number` to users table
+- [x] `PUT /api/users/driver-profile` — update driver details
+- [x] Only allow users with role=driver to access this
 
 ---
 
