@@ -131,17 +131,24 @@ router.post('/logout', authenticate, async (req, res) => {
 // GET /api/users/profile (protected)
 router.get('/profile', authenticate, async (req, res) => {
   try {
+    const cachedResult = await redis.get(`user:${req.user.id}`);
+    if (cachedResult) {
+      console.log("Cache hit");
+      return res.json({ user: JSON.parse(cachedResult) });
+    }
+    else{
     const result = await query(
       `SELECT id, email, name, role, license_number, vehicle_info, is_available, created_at
        FROM users WHERE id = $1`,
       [req.user.id]
     );
-
-    if (result.rows.length === 0) {
+    await redis.set(`user:${req.user.id}`, JSON.stringify(result.rows[0]), 'EX', 300);
+        if (result.rows.length === 0) {
       return res.status(404).json({ error: 'User not found' });
     }
 
     res.json({ user: result.rows[0] });
+  }
   } catch (err) {
     console.error('Profile error:', err.message);
     res.status(500).json({ error: 'Internal server error' });
@@ -153,6 +160,8 @@ router.put('/driver-profile', authenticate, authorize('driver'), async (req, res
   const { license_number, vehicle_info, is_available } = req.body;
 
   try {
+    // This is a WRITE endpoint — always hit the database.
+    // No cache check here! We want to UPDATE the data, not return old cached data.
     const result = await query(
       `UPDATE users
        SET license_number = COALESCE($1, license_number),
@@ -162,6 +171,11 @@ router.put('/driver-profile', authenticate, authorize('driver'), async (req, res
        RETURNING id, email, name, role, license_number, vehicle_info, is_available, created_at`,
       [license_number, vehicle_info ? JSON.stringify(vehicle_info) : null, is_available, req.user.id]
     );
+
+    // CACHE INVALIDATION: delete the old cached profile.
+    // The data in Redis is now stale (we just changed it in PostgreSQL).
+    // DEL forces the next GET /profile to be a cache MISS → fetches fresh data.
+    await redis.del(`user:${req.user.id}`);
 
     res.json({ user: result.rows[0] });
   } catch (err) {

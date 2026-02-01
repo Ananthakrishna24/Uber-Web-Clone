@@ -55,8 +55,8 @@ The student is building an **Uber clone (web-based)** using:
 | 9      | NOT STARTED | —            | —              |
 | 10     | NOT STARTED | —            | —              |
 
-**Last session ended at:** Module 3, Task 3.1 COMPLETED
-**Next session should start at:** Module 3, Task 3.2
+**Last session ended at:** Module 3, Task 3.2 COMPLETED
+**Next session should start at:** Module 3, Task 3.3
 **Any blockers/notes:** No ORMs — using raw SQL + pg for transparency. Using node --watch for dev auto-restart.
 
 ---
@@ -99,10 +99,17 @@ The student is building an **Uber clone (web-based)** using:
 - Completed Task 2.3: Rate limiting with Redis — ioredis, INCR + EXPIRE pattern, 100 req/60s, fail-open strategy
 - First Redis usage! Verified INCR atomic counter, TTL auto-expiry, 429 response with Retry-After
 - Module 2 complete! Next: Module 3 — Redis Deep Dive
+
+### Session 4 — 2026-02-01
 - Completed Task 3.1: Session management with Redis — login stores session (SET), gateway checks session (GET), logout deletes session (DEL)
 - Installed ioredis in user-service, created src/redis.js, added POST /logout endpoint
 - Gateway auth is now async — checks Redis after JWT verification, rejects if session missing or token mismatches (single-session enforcement)
 - Bonus: logging in on a second device invalidates the first (stored token changes)
+- Completed Task 3.2: User profile caching with cache-aside pattern
+- GET /profile checks Redis first (cache hit → skip DB), stores result on miss with 5min TTL
+- PUT /driver-profile invalidates cache (DEL) after DB update so next read fetches fresh data
+- Key lesson: reads populate cache, writes invalidate it
+- Next: Task 3.3 — Redis Pub/Sub
 
 ---
 

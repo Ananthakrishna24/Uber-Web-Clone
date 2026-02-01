@@ -204,10 +204,10 @@ Request → Verify JWT → Check Redis (EXISTS session:{userId})
 Logout → Delete from Redis (DEL session:{userId})
 ```
 
-### Task 3.2 — User Profile Caching
-- [ ] Cache user profile in Redis after first DB fetch
-- [ ] On profile update, invalidate the cache
-- [ ] Set TTL of 5 minutes on cached profiles
+### Task 3.2 — User Profile Caching ✅
+- [x] Cache user profile in Redis after first DB fetch
+- [x] On profile update, invalidate the cache
+- [x] Set TTL of 5 minutes on cached profiles
 - **Learn:** Cache-aside pattern, cache invalidation
 - **Exercise:** Draw the flow diagram — what happens on cache HIT vs MISS?
 
