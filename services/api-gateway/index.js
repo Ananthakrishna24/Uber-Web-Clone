@@ -2,6 +2,7 @@ import express from 'express';
 import { createProxyMiddleware } from 'http-proxy-middleware';
 import jwt from 'jsonwebtoken';
 import rateLimiter from './src/rateLimiter.js';
+import redis from './src/redis.js';
 
 const app = express();
 const PORT = 3000;
@@ -26,7 +27,8 @@ const isPublicRoute = (method, path) =>
   PUBLIC_ROUTES.some((r) => r.method === method && path.startsWith(r.path));
 
 // --- Gateway Auth Middleware ---
-const gatewayAuth = (req, res, next) => {
+// Now async because we need to await the Redis session check
+const gatewayAuth = async (req, res, next) => {
   // Security: Remove any fake ID headers the user might have tried to send manually.
   // We only trust headers that WE verify and add later in this function.
   delete req.headers['x-user-id'];
@@ -46,7 +48,26 @@ const gatewayAuth = (req, res, next) => {
   const token = authHeader.split(' ')[1];
 
   try {
+    // Step 1: Verify the JWT signature (same as before)
+    // This confirms the token wasn't tampered with and hasn't expired.
     const decoded = jwt.verify(token, JWT_SECRET);
+
+    // Step 2: Check Redis — does this user still have an active session?
+    // When a user logs in, user-service stores: SET session:{userId} {token}
+    // When a user logs out, user-service deletes: DEL session:{userId}
+    // So if this returns null, the user has logged out (or session expired in Redis).
+    const storedToken = await redis.get(`session:${decoded.id}`);
+
+    if (!storedToken) {
+      // Session doesn't exist in Redis — user logged out or session expired
+      return res.status(401).json({ error: 'Session expired or logged out' });
+    }
+
+    // Optional extra check: the token in Redis should match the one being used.
+    // This prevents old tokens from working after a fresh login generates a new one.
+    if (storedToken !== token) {
+      return res.status(401).json({ error: 'Session invalidated (logged in elsewhere)' });
+    }
 
     // Forward user info to downstream services via headers
     req.headers['x-user-id'] = decoded.id;

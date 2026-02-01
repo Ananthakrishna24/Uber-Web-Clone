@@ -2,6 +2,7 @@ import express from 'express';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { query } from '../db.js';
+import redis from '../redis.js';
 import authenticate from '../middleware/auth.js';
 import authorize from '../middleware/authorize.js';
 
@@ -93,12 +94,36 @@ router.post('/login', async (req, res) => {
       { expiresIn: JWT_EXPIRES_IN }
     );
 
+    // --- Store session in Redis ---
+    // Key:   "session:{userId}"  — one session per user
+    // Value: the JWT token string
+    // EX:    86400 seconds = 24 hours (matches JWT expiry)
+    //
+    // Why? So the API gateway can CHECK if this session is still valid.
+    // When the user logs out, we DELETE this key → token becomes instantly useless.
+    await redis.set(`session:${user.id}`, token, 'EX', 86400);
+
     res.json({
       token,
       user: { id: user.id, email: user.email, name: user.name, role: user.role },
     });
   } catch (err) {
     console.error('Login error:', err.message);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// POST /api/users/logout (protected — you must be logged in to log out)
+router.post('/logout', authenticate, async (req, res) => {
+  try {
+    // DEL session:{userId} — removes the session key from Redis.
+    // After this, the API gateway will see "null" when it checks for this user's
+    // session, and will reject any further requests with the old token.
+    await redis.del(`session:${req.user.id}`);
+
+    res.json({ message: 'Logged out successfully' });
+  } catch (err) {
+    console.error('Logout error:', err.message);
     res.status(500).json({ error: 'Internal server error' });
   }
 });

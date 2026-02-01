@@ -19,7 +19,11 @@
       "Bash(powershell.exe -Command \"echo \"\"DELETE FROM users WHERE email LIKE ''%example.com''; SELECT count\\(*\\) as remaining FROM users;\"\" | & ''C:\\\\Program Files\\\\Docker\\\\Docker\\\\resources\\\\bin\\\\docker.exe'' exec -i postgres_db psql -U user -d microservices_db\")",
       "Bash(powershell.exe -Command \"echo \"\"DELETE FROM users WHERE email LIKE ''%example.com'';\"\" | & ''C:\\\\Program Files\\\\Docker\\\\Docker\\\\resources\\\\bin\\\\docker.exe'' exec -i postgres_db psql -U user -d microservices_db\")",
       "Bash(powershell.exe:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(docker exec:*)",
+      "Bash(set:*)",
+      "Bash(echo:*)",
+      "Bash(TOKEN=\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU5OWZmODY0LWUwYmItNGQ5Yy05NzgwLTY5NmRjNGI0NzcwMyIsImVtYWlsIjoidGVzdEB0ZXN0LmNvbSIsInJvbGUiOiJyaWRlciIsImlhdCI6MTc2OTk1NTU0MiwiZXhwIjoxNzcwMDQxOTQyfQ.seiYidnUGtFC6635qjerVGeNRY47j2ZLXjP24tPAfGY\")"
     ]
   }
 }

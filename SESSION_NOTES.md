@@ -46,7 +46,7 @@ The student is building an **Uber clone (web-based)** using:
 | 0      | COMPLETED   | 2026-01-31   | 2026-01-31     |
 | 1      | COMPLETED   | 2026-01-31   | 2026-02-01     |
 | 2      | COMPLETED   | 2026-02-01   | 2026-02-01     |
-| 3      | NOT STARTED | —            | —              |
+| 3      | IN PROGRESS | 2026-02-01   | —              |
 | 4      | NOT STARTED | —            | —              |
 | 5      | NOT STARTED | —            | —              |
 | 6      | NOT STARTED | —            | —              |
@@ -55,8 +55,8 @@ The student is building an **Uber clone (web-based)** using:
 | 9      | NOT STARTED | —            | —              |
 | 10     | NOT STARTED | —            | —              |
 
-**Last session ended at:** Module 2 COMPLETED (Task 2.3)
-**Next session should start at:** Module 3, Task 3.1
+**Last session ended at:** Module 3, Task 3.1 COMPLETED
+**Next session should start at:** Module 3, Task 3.2
 **Any blockers/notes:** No ORMs — using raw SQL + pg for transparency. Using node --watch for dev auto-restart.
 
 ---
@@ -99,6 +99,10 @@ The student is building an **Uber clone (web-based)** using:
 - Completed Task 2.3: Rate limiting with Redis — ioredis, INCR + EXPIRE pattern, 100 req/60s, fail-open strategy
 - First Redis usage! Verified INCR atomic counter, TTL auto-expiry, 429 response with Retry-After
 - Module 2 complete! Next: Module 3 — Redis Deep Dive
+- Completed Task 3.1: Session management with Redis — login stores session (SET), gateway checks session (GET), logout deletes session (DEL)
+- Installed ioredis in user-service, created src/redis.js, added POST /logout endpoint
+- Gateway auth is now async — checks Redis after JWT verification, rejects if session missing or token mismatches (single-session enforcement)
+- Bonus: logging in on a second device invalidates the first (stored token changes)
 
 ---
 

@@ -190,10 +190,10 @@ REDIS CONCEPT — Rate Limiting:
 - Cache invalidation (the hard problem)
 - TTL-based expiry
 
-### Task 3.1 — Session Management with Redis
-- [ ] Store active JWT sessions in Redis (key: userId, value: token)
-- [ ] Implement logout by deleting session from Redis
-- [ ] Check Redis on each request (gateway) — enables token revocation
+### Task 3.1 — Session Management with Redis ✅
+- [x] Store active JWT sessions in Redis (key: userId, value: token)
+- [x] Implement logout by deleting session from Redis
+- [x] Check Redis on each request (gateway) — enables token revocation
 - **Learn:** Why JWT alone can't do logout (stateless problem)
 - **Concept:** Redis as a session store
 
