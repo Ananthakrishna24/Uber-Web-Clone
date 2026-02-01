@@ -117,11 +117,11 @@
 - [x] Return user object (without password)
 - **Exercise:** Try writing this yourself first, then we review together
 
-### Task 1.3 — User Login & JWT
-- [ ] `POST /api/users/login` — accepts email, password
-- [ ] Compare password with bcrypt
-- [ ] Generate JWT token with user id and role
-- [ ] Return token to client
+### Task 1.3 — User Login & JWT ✅
+- [x] `POST /api/users/login` — accepts email, password
+- [x] Compare password with bcrypt
+- [x] Generate JWT token with user id and role
+- [x] Return token to client
 - **Learn:** JWT structure (header.payload.signature), expiry, secrets
 - **Exercise:** Decode a JWT on jwt.io to understand the structure
 

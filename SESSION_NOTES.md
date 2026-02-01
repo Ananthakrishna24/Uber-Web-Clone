@@ -55,9 +55,9 @@ The student is building an **Uber clone (web-based)** using:
 | 9      | NOT STARTED | —            | —              |
 | 10     | NOT STARTED | —            | —              |
 
-**Last session ended at:** Module 1, Task 1.2 completed
-**Next session should start at:** Module 1, Task 1.3
-**Any blockers/notes:** No ORMs — using raw SQL + pg for transparency
+**Last session ended at:** Module 1, Task 1.3 completed
+**Next session should start at:** Module 1, Task 1.4
+**Any blockers/notes:** No ORMs — using raw SQL + pg for transparency. Using node --watch for dev auto-restart.
 
 ---
 
@@ -85,6 +85,8 @@ The student is building an **Uber clone (web-based)** using:
 - Completed Task 1.1: Created `users` table with UUID primary key, unique email index, role CHECK constraint
 - Decision: No ORM — raw SQL + `pg` for learning transparency
 - Completed Task 1.2: Registration endpoint with bcrypt hashing, input validation, duplicate email handling
+- Added `npm run dev` scripts (node --watch) to all services, updated start-services.ps1 to start Docker first
+- Completed Task 1.3: Login endpoint with bcrypt compare and JWT token generation (24h expiry)
 
 ---
 
