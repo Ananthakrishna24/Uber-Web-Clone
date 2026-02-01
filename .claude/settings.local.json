@@ -17,7 +17,9 @@
       "Bash(powershell.exe -Command \"cd ''C:\\\\Users\\\\anant\\\\Downloads\\\\Uber-Web-Clone\\\\services\\\\user-service''; $proc = Start-Process -FilePath ''node'' -ArgumentList ''index.js'' -PassThru -NoNewWindow -RedirectStandardOutput ''stdout.txt'' -RedirectStandardError ''stderr.txt''; Start-Sleep -Seconds 3; Stop-Process -Id $proc.Id -Force -ErrorAction SilentlyContinue; Get-Content stdout.txt; Get-Content stderr.txt\")",
       "Bash(powershell.exe -Command \"echo ''\\\\d users'' | & ''C:\\\\Program Files\\\\Docker\\\\Docker\\\\resources\\\\bin\\\\docker.exe'' exec -i postgres_db psql -U user -d microservices_db\")",
       "Bash(powershell.exe -Command \"echo \"\"DELETE FROM users WHERE email LIKE ''%example.com''; SELECT count\\(*\\) as remaining FROM users;\"\" | & ''C:\\\\Program Files\\\\Docker\\\\Docker\\\\resources\\\\bin\\\\docker.exe'' exec -i postgres_db psql -U user -d microservices_db\")",
-      "Bash(powershell.exe -Command \"echo \"\"DELETE FROM users WHERE email LIKE ''%example.com'';\"\" | & ''C:\\\\Program Files\\\\Docker\\\\Docker\\\\resources\\\\bin\\\\docker.exe'' exec -i postgres_db psql -U user -d microservices_db\")"
+      "Bash(powershell.exe -Command \"echo \"\"DELETE FROM users WHERE email LIKE ''%example.com'';\"\" | & ''C:\\\\Program Files\\\\Docker\\\\Docker\\\\resources\\\\bin\\\\docker.exe'' exec -i postgres_db psql -U user -d microservices_db\")",
+      "Bash(powershell.exe:*)",
+      "Bash(curl:*)"
     ]
   }
 }

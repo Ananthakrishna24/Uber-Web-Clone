@@ -125,10 +125,10 @@
 - **Learn:** JWT structure (header.payload.signature), expiry, secrets
 - **Exercise:** Decode a JWT on jwt.io to understand the structure
 
-### Task 1.4 — Auth Middleware
-- [ ] Create middleware that verifies JWT from `Authorization` header
-- [ ] Attach decoded user info to `req.user`
-- [ ] Create a protected route `GET /api/users/profile`
+### Task 1.4 — Auth Middleware ✅
+- [x] Create middleware that verifies JWT from `Authorization` header
+- [x] Attach decoded user info to `req.user`
+- [x] Create a protected route `GET /api/users/profile`
 - **Learn:** Middleware pattern, request pipeline
 
 ### Task 1.5 — Driver-Specific Fields

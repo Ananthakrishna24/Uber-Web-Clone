@@ -2,6 +2,7 @@ import express from 'express';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { query } from '../db.js';
+import authenticate from '../middleware/auth.js';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'dev-secret-change-in-production';
 const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN || '24h';
@@ -97,6 +98,25 @@ router.post('/login', async (req, res) => {
     });
   } catch (err) {
     console.error('Login error:', err.message);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// GET /api/users/profile (protected)
+router.get('/profile', authenticate, async (req, res) => {
+  try {
+    const result = await query(
+      'SELECT id, email, name, role, created_at FROM users WHERE id = $1',
+      [req.user.id]
+    );
+
+    if (result.rows.length === 0) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    res.json({ user: result.rows[0] });
+  } catch (err) {
+    console.error('Profile error:', err.message);
     res.status(500).json({ error: 'Internal server error' });
   }
 });
