@@ -146,11 +146,11 @@
 - Reverse proxy pattern
 - Why not let the frontend talk to each service directly?
 
-### Task 2.1 — Basic API Gateway
-- [ ] Set up Express server that proxies requests to backend services
-- [ ] Route `/api/users/*` → User Service
-- [ ] Route `/api/rides/*` → Ride Service
-- [ ] Route `/api/locations/*` → Location Service
+### Task 2.1 — Basic API Gateway ✅
+- [x] Set up Express server that proxies requests to backend services
+- [x] Route `/api/users/*` → User Service
+- [x] Route `/api/rides/*` → Ride Service
+- [x] Route `/api/locations/*` → Location Service
 - **Learn:** `http-proxy-middleware` package, URL rewriting
 
 ### Task 2.2 — Auth at the Gateway

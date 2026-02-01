@@ -45,7 +45,7 @@ The student is building an **Uber clone (web-based)** using:
 |--------|-------------|--------------|----------------|
 | 0      | COMPLETED   | 2026-01-31   | 2026-01-31     |
 | 1      | COMPLETED   | 2026-01-31   | 2026-02-01     |
-| 2      | NOT STARTED | —            | —              |
+| 2      | IN PROGRESS | 2026-02-01   | —              |
 | 3      | NOT STARTED | —            | —              |
 | 4      | NOT STARTED | —            | —              |
 | 5      | NOT STARTED | —            | —              |
@@ -55,8 +55,8 @@ The student is building an **Uber clone (web-based)** using:
 | 9      | NOT STARTED | —            | —              |
 | 10     | NOT STARTED | —            | —              |
 
-**Last session ended at:** Module 1 COMPLETED (Task 1.5)
-**Next session should start at:** Module 2, Task 2.1
+**Last session ended at:** Module 2, Task 2.1 completed
+**Next session should start at:** Module 2, Task 2.2
 **Any blockers/notes:** No ORMs — using raw SQL + pg for transparency. Using node --watch for dev auto-restart.
 
 ---
@@ -90,6 +90,10 @@ The student is building an **Uber clone (web-based)** using:
 - Completed Task 1.4: Auth middleware (JWT verification) + protected GET /api/users/profile endpoint
 - Completed Task 1.5: Driver-specific fields (license_number, vehicle_info JSONB, is_available) + PUT /driver-profile with role-based authorization
 - Module 1 complete! Next: Module 2 — API Gateway Pattern
+
+### Session 3 — 2026-02-01
+- Completed Task 2.1: API Gateway with http-proxy-middleware proxying /api/users, /api/rides, /api/locations
+- Learned: reverse proxy pattern, pathFilter vs Express mount path (mount strips prefix), changeOrigin
 
 ---
 
