@@ -1,6 +1,7 @@
 import express from 'express';
 import { createProxyMiddleware } from 'http-proxy-middleware';
 import jwt from 'jsonwebtoken';
+import rateLimiter from './src/rateLimiter.js';
 
 const app = express();
 const PORT = 3000;
@@ -67,7 +68,8 @@ app.get('/health', (req, res) => {
   res.json({ status: 'ok', service: 'api-gateway', uptime: process.uptime() });
 });
 
-// --- Apply gateway auth before all proxy routes ---
+// --- Apply rate limiting and auth before all proxy routes ---
+app.use(rateLimiter);
 app.use(gatewayAuth);
 
 // --- Proxy routes ---
@@ -111,4 +113,5 @@ app.listen(PORT, () => {
   console.log(`  /api/rides     → ${SERVICES.rides}`);
   console.log(`  /api/locations → ${SERVICES.locations}`);
   console.log(`Auth: edge authentication enabled (${PUBLIC_ROUTES.length} public routes)`);
+  console.log(`Rate limiting: ${100} requests per ${60}s window (Redis-backed)`);
 });

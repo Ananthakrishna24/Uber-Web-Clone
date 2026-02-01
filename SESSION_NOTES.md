@@ -45,7 +45,7 @@ The student is building an **Uber clone (web-based)** using:
 |--------|-------------|--------------|----------------|
 | 0      | COMPLETED   | 2026-01-31   | 2026-01-31     |
 | 1      | COMPLETED   | 2026-01-31   | 2026-02-01     |
-| 2      | IN PROGRESS | 2026-02-01   | —              |
+| 2      | COMPLETED   | 2026-02-01   | 2026-02-01     |
 | 3      | NOT STARTED | —            | —              |
 | 4      | NOT STARTED | —            | —              |
 | 5      | NOT STARTED | —            | —              |
@@ -55,8 +55,8 @@ The student is building an **Uber clone (web-based)** using:
 | 9      | NOT STARTED | —            | —              |
 | 10     | NOT STARTED | —            | —              |
 
-**Last session ended at:** Module 2, Task 2.2 completed
-**Next session should start at:** Module 2, Task 2.3
+**Last session ended at:** Module 2 COMPLETED (Task 2.3)
+**Next session should start at:** Module 3, Task 3.1
 **Any blockers/notes:** No ORMs — using raw SQL + pg for transparency. Using node --watch for dev auto-restart.
 
 ---
@@ -96,6 +96,9 @@ The student is building an **Uber clone (web-based)** using:
 - Learned: reverse proxy pattern, pathFilter vs Express mount path (mount strips prefix), changeOrigin
 - Completed Task 2.2: Edge authentication at gateway — JWT verified once, user info forwarded via X-User-* headers, anti-spoofing header stripping
 - Updated user-service auth middleware to accept gateway headers with JWT fallback
+- Completed Task 2.3: Rate limiting with Redis — ioredis, INCR + EXPIRE pattern, 100 req/60s, fail-open strategy
+- First Redis usage! Verified INCR atomic counter, TTL auto-expiry, 429 response with Retry-After
+- Module 2 complete! Next: Module 3 — Redis Deep Dive
 
 ---
 

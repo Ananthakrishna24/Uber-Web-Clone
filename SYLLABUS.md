@@ -159,10 +159,10 @@
 - [x] Services trust the gateway (internal network concept)
 - **Learn:** Edge authentication vs service-level authentication
 
-### Task 2.3 — Rate Limiting with Redis (First Redis Usage!)
-- [ ] Install Redis client (`ioredis`) in api-gateway
-- [ ] Implement rate limiting: max 100 requests per minute per IP
-- [ ] Store request counts in Redis with TTL (time-to-live)
+### Task 2.3 — Rate Limiting with Redis (First Redis Usage!) ✅
+- [x] Install Redis client (`ioredis`) in api-gateway
+- [x] Implement rate limiting: max 100 requests per minute per IP
+- [x] Store request counts in Redis with TTL (time-to-live)
 - **Learn:** Redis as a fast key-value store, TTL, atomic operations
 - **Exercise:** What happens if Redis goes down? How should the gateway behave?
 
