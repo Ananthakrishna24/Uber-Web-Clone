@@ -153,10 +153,10 @@
 - [x] Route `/api/locations/*` → Location Service
 - **Learn:** `http-proxy-middleware` package, URL rewriting
 
-### Task 2.2 — Auth at the Gateway
-- [ ] Move JWT verification to the API Gateway
-- [ ] Forward decoded user info to downstream services via headers
-- [ ] Services trust the gateway (internal network concept)
+### Task 2.2 — Auth at the Gateway ✅
+- [x] Move JWT verification to the API Gateway
+- [x] Forward decoded user info to downstream services via headers
+- [x] Services trust the gateway (internal network concept)
 - **Learn:** Edge authentication vs service-level authentication
 
 ### Task 2.3 — Rate Limiting with Redis (First Redis Usage!)

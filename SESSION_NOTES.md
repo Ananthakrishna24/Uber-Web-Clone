@@ -55,8 +55,8 @@ The student is building an **Uber clone (web-based)** using:
 | 9      | NOT STARTED | —            | —              |
 | 10     | NOT STARTED | —            | —              |
 
-**Last session ended at:** Module 2, Task 2.1 completed
-**Next session should start at:** Module 2, Task 2.2
+**Last session ended at:** Module 2, Task 2.2 completed
+**Next session should start at:** Module 2, Task 2.3
 **Any blockers/notes:** No ORMs — using raw SQL + pg for transparency. Using node --watch for dev auto-restart.
 
 ---
@@ -94,6 +94,8 @@ The student is building an **Uber clone (web-based)** using:
 ### Session 3 — 2026-02-01
 - Completed Task 2.1: API Gateway with http-proxy-middleware proxying /api/users, /api/rides, /api/locations
 - Learned: reverse proxy pattern, pathFilter vs Express mount path (mount strips prefix), changeOrigin
+- Completed Task 2.2: Edge authentication at gateway — JWT verified once, user info forwarded via X-User-* headers, anti-spoofing header stripping
+- Updated user-service auth middleware to accept gateway headers with JWT fallback
 
 ---
 
