@@ -23,7 +23,11 @@
       "Bash(docker exec:*)",
       "Bash(set:*)",
       "Bash(echo:*)",
-      "Bash(TOKEN=\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU5OWZmODY0LWUwYmItNGQ5Yy05NzgwLTY5NmRjNGI0NzcwMyIsImVtYWlsIjoidGVzdEB0ZXN0LmNvbSIsInJvbGUiOiJyaWRlciIsImlhdCI6MTc2OTk1NTU0MiwiZXhwIjoxNzcwMDQxOTQyfQ.seiYidnUGtFC6635qjerVGeNRY47j2ZLXjP24tPAfGY\")"
+      "Bash(TOKEN=\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU5OWZmODY0LWUwYmItNGQ5Yy05NzgwLTY5NmRjNGI0NzcwMyIsImVtYWlsIjoidGVzdEB0ZXN0LmNvbSIsInJvbGUiOiJyaWRlciIsImlhdCI6MTc2OTk1NTU0MiwiZXhwIjoxNzcwMDQxOTQyfQ.seiYidnUGtFC6635qjerVGeNRY47j2ZLXjP24tPAfGY\")",
+      "WebFetch(domain:www.npmjs.com)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(npm uninstall:*)"
     ]
   }
 }

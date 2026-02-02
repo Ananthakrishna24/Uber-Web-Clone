@@ -111,6 +111,13 @@ The student is building an **Uber clone (web-based)** using:
 - Key lesson: reads populate cache, writes invalidate it
 - Next: Task 3.3 — Redis Pub/Sub
 
+### Session 5 — 2026-02-02
+- Started Task 3.3: Redis Pub/Sub — created notes file with concepts (Pub/Sub pattern, Redis vs Kafka, fire-and-forget vs guaranteed delivery)
+- Attempted Swagger UI setup (express-oas-generator) — incompatible with Express 5, removed. Using Postman instead.
+- Notes file ready at `notes/module-03-redis-deep-dive/task-3.3-redis-pubsub.md`
+- No code written yet — student will implement in next session
+- Next: Task 3.3 — implement driver-status toggle + pub/sub between services
+
 ---
 
 ## HOW TO USE THIS FILE (for Claude)
