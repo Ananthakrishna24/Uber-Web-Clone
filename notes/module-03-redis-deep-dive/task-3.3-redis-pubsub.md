@@ -96,7 +96,7 @@ This is the most important concept in this task:
 │ No message storage         │ Messages stored on disk          │
 │ Miss it = it's gone        │ Can replay from any offset       │
 │ No consumer groups         │ Consumer groups + load balancing │
-│ No acknowledgment          │ Offset commits = acknowledgment │
+│ No acknowledgment          │ Offset commits = acknowledgment  │
 │ Very fast, very simple     │ More complex, more reliable      │
 │ Best for: real-time events │ Best for: business events        │
 │ that are OK to lose        │ that MUST be processed           │
