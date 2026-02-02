@@ -211,10 +211,10 @@ Logout → Delete from Redis (DEL session:{userId})
 - **Learn:** Cache-aside pattern, cache invalidation
 - **Exercise:** Draw the flow diagram — what happens on cache HIT vs MISS?
 
-### Task 3.3 — Redis Pub/Sub (Preview of Real-time)
-- [ ] Implement a simple pub/sub between two services
-- [ ] Publish "driver-status-changed" events
-- [ ] Subscribe and log events in another service
+### Task 3.3 — Redis Pub/Sub (Preview of Real-time) ✅
+- [x] Implement a simple pub/sub between two services
+- [x] Publish "driver-status-changed" events
+- [x] Subscribe and log events in another service
 - **Learn:** Redis Pub/Sub vs Kafka (when to use which)
 - **Concept:** Fire-and-forget vs guaranteed delivery
 

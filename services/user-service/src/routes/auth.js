@@ -184,4 +184,47 @@ router.put('/driver-profile', authenticate, authorize('driver'), async (req, res
   }
 });
 
+// PUT /api/users/driver-status (protected, driver-only)
+// This is the PUB/SUB endpoint — toggles availability AND broadcasts to other services.
+router.put('/driver-status', authenticate, authorize('driver'), async (req, res) => {
+  const { is_available } = req.body;
+
+  // Validate: must be explicitly true or false (this is a toggle, not a partial update)
+  if (typeof is_available !== 'boolean') {
+    return res.status(400).json({ error: 'is_available must be true or false' });
+  }
+
+  try {
+    // Step 1: Update the database
+    const result = await query(
+      `UPDATE users SET is_available = $1
+       WHERE id = $2
+       RETURNING id, email, name, role, is_available`,
+      [is_available, req.user.id]
+    );
+
+    // Step 2: Invalidate the cached profile (stale data now)
+    await redis.del(`user:${req.user.id}`);
+
+    // Step 3: PUBLISH the event to Redis — this is the new part!
+    // Any service subscribed to "driver-status-changed" will receive this message.
+    // redis.publish() returns the number of subscribers who received it.
+    const subscriberCount = await redis.publish(
+      'driver-status-changed',
+      JSON.stringify({
+        driverId: req.user.id,
+        available: is_available,
+        timestamp: new Date().toISOString(),
+      })
+    );
+
+    console.log(`Published driver-status-changed → ${subscriberCount} subscriber(s) received it`);
+
+    res.json({ user: result.rows[0] });
+  } catch (err) {
+    console.error('Driver status update error:', err.message);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 export default router;

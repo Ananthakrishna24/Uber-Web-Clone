@@ -46,7 +46,7 @@ The student is building an **Uber clone (web-based)** using:
 | 0      | COMPLETED   | 2026-01-31   | 2026-01-31     |
 | 1      | COMPLETED   | 2026-01-31   | 2026-02-01     |
 | 2      | COMPLETED   | 2026-02-01   | 2026-02-01     |
-| 3      | IN PROGRESS | 2026-02-01   | —              |
+| 3      | COMPLETED   | 2026-02-01   | 2026-02-02     |
 | 4      | NOT STARTED | —            | —              |
 | 5      | NOT STARTED | —            | —              |
 | 6      | NOT STARTED | —            | —              |
@@ -55,8 +55,8 @@ The student is building an **Uber clone (web-based)** using:
 | 9      | NOT STARTED | —            | —              |
 | 10     | NOT STARTED | —            | —              |
 
-**Last session ended at:** Module 3, Task 3.2 COMPLETED
-**Next session should start at:** Module 3, Task 3.3
+**Last session ended at:** Module 3, Task 3.3 COMPLETED — Module 3 COMPLETE
+**Next session should start at:** Module 4, Task 4.1
 **Any blockers/notes:** No ORMs — using raw SQL + pg for transparency. Using node --watch for dev auto-restart.
 
 ---
@@ -117,6 +117,12 @@ The student is building an **Uber clone (web-based)** using:
 - Notes file ready at `notes/module-03-redis-deep-dive/task-3.3-redis-pubsub.md`
 - No code written yet — student will implement in next session
 - Next: Task 3.3 — implement driver-status toggle + pub/sub between services
+- Completed Task 3.3: Redis Pub/Sub between services
+- Created `PUT /api/users/driver-status` endpoint — updates DB, invalidates cache, PUBLISHes event
+- Added ioredis to ride-service, created `src/redis.js` in both ride-service and location-service with two connections (normal + subscriber)
+- Both ride-service and location-service subscribe to `driver-status-changed` channel on startup
+- Key lesson: subscriber mode locks the connection — need a dedicated second connection
+- Module 3 complete! Next: Module 4 — Kafka Fundamentals
 
 ---
 
