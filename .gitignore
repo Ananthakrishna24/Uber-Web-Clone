@@ -28,3 +28,5 @@ pgdata/
 redis-data/
 kafka-data/
 nul
+CLAUDE_LEARNING_PROMPT.md
+LEARNING_PROJECT_PROMPT_TEMPLATE.md

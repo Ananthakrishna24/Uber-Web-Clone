@@ -251,11 +251,11 @@ Key Insight: Messages with same KEY always go to same partition
   → Guarantees ordering per ride!
 ```
 
-### Task 4.1 — Kafka Setup Verification
-- [ ] Verify Kafka is running in Docker
-- [ ] Use `kafka-topics.sh` to create topics manually from inside container
-- [ ] Create topics: `ride-events`, `location-updates`, `notifications`
-- [ ] List topics, describe topic details (partitions, replication)
+### Task 4.1 — Kafka Setup Verification ✅
+- [x] Verify Kafka is running in Docker
+- [x] Use `kafka-topics.sh` to create topics manually from inside container
+- [x] Create topics: `ride-events`, `location-updates`, `notifications`
+- [x] List topics, describe topic details (partitions, replication)
 - **Learn:** Kafka CLI tools, topic configuration
 
 ### Task 4.2 — Your First Kafka Producer

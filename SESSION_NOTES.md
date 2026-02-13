@@ -47,7 +47,7 @@ The student is building an **Uber clone (web-based)** using:
 | 1      | COMPLETED   | 2026-01-31   | 2026-02-01     |
 | 2      | COMPLETED   | 2026-02-01   | 2026-02-01     |
 | 3      | COMPLETED   | 2026-02-01   | 2026-02-02     |
-| 4      | NOT STARTED | —            | —              |
+| 4      | IN PROGRESS | 2026-02-03   | —              |
 | 5      | NOT STARTED | —            | —              |
 | 6      | NOT STARTED | —            | —              |
 | 7      | NOT STARTED | —            | —              |
@@ -55,8 +55,8 @@ The student is building an **Uber clone (web-based)** using:
 | 9      | NOT STARTED | —            | —              |
 | 10     | NOT STARTED | —            | —              |
 
-**Last session ended at:** Module 3, Task 3.3 COMPLETED — Module 3 COMPLETE
-**Next session should start at:** Module 4, Task 4.1
+**Last session ended at:** Module 4, Task 4.1 COMPLETED
+**Next session should start at:** Module 4, Task 4.2
 **Any blockers/notes:** No ORMs — using raw SQL + pg for transparency. Using node --watch for dev auto-restart.
 
 ---
@@ -123,6 +123,14 @@ The student is building an **Uber clone (web-based)** using:
 - Both ride-service and location-service subscribe to `driver-status-changed` channel on startup
 - Key lesson: subscriber mode locks the connection — need a dedicated second connection
 - Module 3 complete! Next: Module 4 — Kafka Fundamentals
+
+### Session 6 — 2026-02-03
+- Completed Task 4.1: Kafka setup verification
+- Verified Kafka container running (confluentinc/cp-kafka:7.5.0)
+- Created 3 topics via CLI: `ride-events` (3 partitions), `location-updates` (3 partitions), `notifications` (1 partition)
+- Learned: topics, partitions, replication factor, Leader/Isr, Kafka CLI tools
+- Key lesson: Kafka vs Redis Pub/Sub — Kafka persists messages, supports replay and consumer groups
+- Next: Task 4.2 — First Kafka Producer with kafkajs
 
 ---
 
