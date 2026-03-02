@@ -258,11 +258,11 @@ Key Insight: Messages with same KEY always go to same partition
 - [x] List topics, describe topic details (partitions, replication)
 - **Learn:** Kafka CLI tools, topic configuration
 
-### Task 4.2 — Your First Kafka Producer
-- [ ] Install `kafkajs` in ride-service
-- [ ] Create a producer that sends a test message to `ride-events`
-- [ ] Understand message structure: { key, value, headers }
-- [ ] Send 10 messages and observe in Kafka
+### Task 4.2 — Your First Kafka Producer ✅
+- [x] Install `kafkajs` in ride-service
+- [x] Create a producer that sends a test message to `ride-events`
+- [x] Understand message structure: { key, value, headers }
+- [x] Send 10 messages and observe in Kafka
 - **Exercise:** Send messages with different keys — observe partition assignment
 
 ### Task 4.3 — Your First Kafka Consumer

@@ -55,8 +55,8 @@ The student is building an **Uber clone (web-based)** using:
 | 9      | NOT STARTED | —            | —              |
 | 10     | NOT STARTED | —            | —              |
 
-**Last session ended at:** Module 4, Task 4.1 COMPLETED
-**Next session should start at:** Module 4, Task 4.2
+**Last session ended at:** Module 4, Task 4.2 COMPLETED
+**Next session should start at:** Module 4, Task 4.3
 **Any blockers/notes:** No ORMs — using raw SQL + pg for transparency. Using node --watch for dev auto-restart.
 
 ---
@@ -131,6 +131,15 @@ The student is building an **Uber clone (web-based)** using:
 - Learned: topics, partitions, replication factor, Leader/Isr, Kafka CLI tools
 - Key lesson: Kafka vs Redis Pub/Sub — Kafka persists messages, supports replay and consumer groups
 - Next: Task 4.2 — First Kafka Producer with kafkajs
+
+### Session 7 — 2026-03-02
+- Created brush-up notes at `notes/module-04-kafka-fundamentals/BRUSH-UP-NOTES.md`
+- Completed Task 4.2: First Kafka Producer with kafkajs
+- Created `services/ride-service/src/kafka.js` — Kafka client + producer with env-based broker config, explicit DefaultPartitioner
+- Created `services/ride-service/src/testProducer.js` — sends 10 batch messages to `ride-events` with 3 rotating rideId keys
+- Verified: messages grouped by key per partition, per-key ordering preserved (sequences 2,5,8 together; 1,4,7,10 together; 3,6,9 together)
+- Key lesson: same key → same partition → guaranteed ordering within that key
+- Next: Task 4.3 — First Kafka Consumer
 
 ---
 

@@ -29,7 +29,11 @@
       "WebFetch(domain:raw.githubusercontent.com)",
       "Bash(npm uninstall:*)",
       "Bash(del \"C:\\\\Users\\\\anant\\\\Downloads\\\\Uber-Web-Clone\\\\services\\\\location-service\\\\src\\\\redisSub.js\")",
-      "Bash(docker ps:*)"
+      "Bash(docker ps:*)",
+      "Bash(docker compose:*)",
+      "Bash(chmod +x:*)",
+      "Bash(docker:*)",
+      "Bash(sudo lsof:*)"
     ]
   }
 }
